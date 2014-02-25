@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AppDelegate.h
 //  SimpleTableProject
 //
 //  Created by Anyssa Buchanan on 2/20/14.
@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface SimpleTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>;
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 @end

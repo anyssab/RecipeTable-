@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TableViewController.h
 //  SimpleTableProject
 //
 //  Created by Anyssa Buchanan on 2/20/14.
@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface SimpleTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>;
+
+@interface TableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>;
 
 @end

@@ -8,17 +8,24 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface UIViewController ()
 
 @end
 
-@implementation ViewController
+@implementation SimpleTableViewController
+{
+    NSArray *recipes;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    recipes = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"ham and egg sandwich", @"Creme Brulee", @"White chocolare donut", @"Starbucks coffee", @"vegetable curry", @"Instant noodle with egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+    
+    
 }
+	// Do any additional setup after loading the view, typically from a nib.
 
 - (void)didReceiveMemoryWarning
 {
