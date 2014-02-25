@@ -56,25 +56,25 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 30.0;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString *CustomCellIdentifier = @"CustomCell";
     
-    static NSString *TableIdentifier = @"CustomCell";
-    
-    CustomCell *cell = (CustomCell*)[tableView dequeueReusableCellWithIdentifier:TableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TableIdentifier];
-//        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCell" owner:self options:nil];
-//        cell = [nib objectAtIndex:0];
+    CustomCell *cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:CustomCellIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
-//    cell.backgroundColor = [UIColor blackColor];
-    cell.nameLabel.text = @"HELLO";
-
-//    cell.nameLabel.text = [tableData objectAtIndex:indexPath.row];
+    
+    cell.nameLabel.text = [tableData objectAtIndex:indexPath.row];
     cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
     cell.prepTimeLabel.text = [prepTime objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+//    cell.nameLabel.text = [tableData objectAtIndex:indexPath.row];
     
 
     //cell.textLabel.text = [recipes objectAtIndex:indexPath.row];
@@ -129,10 +129,7 @@
             break;
         default:
             break;*/
-    
-    return cell;
-    
-}
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
